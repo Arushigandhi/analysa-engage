@@ -1,0 +1,45 @@
+@import "../variables";
+
+.pointers {
+  :global {
+    .ant-steps-item-process
+      .ant-steps-item-icon
+      > .ant-steps-icon
+      .ant-steps-icon-dot {
+      background-color: $analysa-purple;
+    }
+    .ant-steps-item-wait
+      .ant-steps-item-icon
+      > .ant-steps-icon
+      .ant-steps-icon-dot {
+      background-color: $analysa-purple;
+    }
+    .ant-steps-item-tail::after {
+      background-color: $analysa-purple !important;
+    }
+    .ant-steps-item-process
+      > .ant-steps-item-container
+      > .ant-steps-item-tail::after {
+      background-color: $analysa-purple;
+    }
+  }
+  .dropdown {
+    border: 1px solid rgba(31, 33, 39, 0.2);
+    border-radius: 4px;
+    margin: 1.5rem 0;
+  }
+  .timelineButton {
+    color: $analysa-purple;
+    margin: 0.5rem 0 2.5rem;
+    cursor: pointer;
+  }
+  .percentage {
+    margin: 1rem 0;
+  }
+  .tagDiv {
+    margin: 2rem 0;
+  }
+  .scatterCard {
+    margin: 4rem 0;
+  }
+}
