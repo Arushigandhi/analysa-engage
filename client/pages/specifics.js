@@ -10,7 +10,7 @@ import {
   Form,
   Row,
   Select,
-  message,
+  Spin,
 } from "antd";
 import {
   findSimilarity,
@@ -40,7 +40,7 @@ export default function Specifics() {
     torque: "10.1kgm@4500RPM",
     type: "AMT",
   });
-  const [avg, setAvg] = useState(0);
+  const [avg, setAvg] = useState(-1);
 
   const { data, isLoading } = useQuery("similarCars", getSimilarCars);
   const newData = [];
@@ -120,20 +120,24 @@ export default function Specifics() {
             opacity: 0.8,
           }}
         >
-          {newData.map((item, idx) => {
-            return (
-              <div className={Styles.contentStyle}>
-                <h3>
-                  <span>
-                    {item[1]} {item[0][0]}
-                  </span>{" "}
-                  cars giving mileage of <span>{item[0][1]}</span> with{" "}
-                  <span>{item[0][2]} </span>
-                  engine.
-                </h3>
-              </div>
-            );
-          })}
+          {!isLoading ? (
+            newData.map((item, idx) => {
+              return (
+                <div className={Styles.contentStyle}>
+                  <h3>
+                    <span>
+                      {item[1]} {item[0][0]}
+                    </span>{" "}
+                    cars giving mileage of <span>{item[0][1]}</span> with{" "}
+                    <span>{item[0][2]} </span>
+                    engine.
+                  </h3>
+                </div>
+              );
+            })
+          ) : (
+            <Spin size="large" />
+          )}
         </Carousel>
         <Row className={Styles.cosineSim}>
           <Row>
@@ -141,8 +145,9 @@ export default function Specifics() {
               Select two cars and find out how similar they are to each other.
             </h1>
             <h2>
-              Analysa uses Cosine similarity to find out the similarity between
-              the the different data points of the two selected cars.
+              Analysa uses similarity finding algorithms to find out the
+              similarity between the the different data points of the two
+              selected cars.
             </h2>
           </Row>
           <Row className={Styles.selectCardController}>
@@ -353,7 +358,9 @@ export default function Specifics() {
             // disabled={carOne != null && carTwo != null ? false : true}
             onClick={generate}
           >
-            {avg === 0 ? "Generate Similarity" : "Similarity Score is: " + avg}
+            {avg === -1
+              ? "Generate Similarity"
+              : "Similarity Score is: " + avg.toFixed(5) * 100 + "%"}
           </Button>
         </Row>
       </div>

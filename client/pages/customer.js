@@ -32,7 +32,7 @@ const { Option } = Select;
 export default function Customer() {
   const [percentage, setPercentage] = useState(-1);
   const [percentageCar, setPercentageCar] = useState(-1);
-  const [percentageOpp, setPercentageOpp] = useState(0);
+  const [percentageOpp, setPercentageOpp] = useState(-1);
 
   const { data: carTypes, isLoading } = useQuery("bodyTypeData", getBodyType);
   const carBody = carTypes?.carsBody;

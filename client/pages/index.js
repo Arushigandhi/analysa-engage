@@ -7,6 +7,7 @@ import {
   Tooltip as AntdTooltip,
   message,
   Skeleton,
+  Spin,
 } from "antd";
 import DashboardLayout from "components/DashboardLayout";
 import ModalComponent from "components/ModalComponent";
@@ -67,6 +68,7 @@ export default function Home() {
 
   const getSpecificCar = async (_id) => {
     await carDetails.mutateAsync(_id);
+    // await queryClient.invalidateQueries("programsData");
   };
 
   const showModal = (_id) => {
@@ -86,30 +88,13 @@ export default function Home() {
   const carBody = carTypes?.carsBody?.slice(0, 5);
   const carFuel = carTypes?.carsFuel?.slice(0, 5);
   const carGears = carTypes?.carsGears?.slice(0, 4);
-  const carEngLocation = carTypes?.carsEngLocation?.slice(0, 4);
+  const carEngLocation = carTypes?.carsEngLocation.sort();
+  console.log(carEngLocation, "kk");
 
   const { data: popCars, isLoading: isLoadingPop } = useQuery(
     "popCarsData",
     getPopularCars
   );
-  // chartData = [
-  //   {
-  //     name: "Week 1",
-  //     value: 10,
-  //   },
-  //   {
-  //     name: "Week 2",
-  //     value: 30,
-  //   },
-  //   {
-  //     name: "Week 3",
-  //     value: 50,
-  //   },
-  //   {
-  //     name: "Week 4",
-  //     value: 20,
-  //   },
-  // ];
 
   return (
     <DashboardLayout title="Dashboard">
@@ -309,26 +294,6 @@ export default function Home() {
                   />
                 </AntdTooltip>
               </Row>
-              <Row>
-                {/* <div className={Styles.category}>
-                  <RiCheckboxBlankFill
-                    color="rgba(57, 84, 255, 1)"
-                    style={{
-                      margin: "0 5px",
-                    }}
-                  />
-                  Make
-                </div>
-                <div className={Styles.category}>
-                  <RiCheckboxBlankFill
-                    color="rgba(255, 211, 57, 1)"
-                    style={{
-                      margin: "0 5px",
-                    }}
-                  />
-                  Model
-                </div> */}
-              </Row>
               <Select
                 defaultValue={"Tata"}
                 // style={{ width: "fit-content" }}
@@ -380,7 +345,7 @@ export default function Home() {
                 </BarChart>
               </ResponsiveContainer>
             ) : (
-              <Skeleton />
+              <Spin size="large" />
             )}
           </Card>
         </Col>
@@ -402,7 +367,6 @@ export default function Home() {
                 />
               </AntdTooltip>
             </Row>
-
             <ResponsiveContainer
               width={800}
               height={420}

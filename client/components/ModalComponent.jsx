@@ -22,11 +22,10 @@ const ModalComponent = ({
   return (
     <>
       <Modal
-        keyboard={keyboard}
         className={Styles.modalContainer}
         visible={show}
-        centered
-        width={width ? width : 700}
+        centered={true}
+        width={width ? width : 900}
         style={{
           maxWidth: maxWidth ? maxWidth : "900px",
         }}

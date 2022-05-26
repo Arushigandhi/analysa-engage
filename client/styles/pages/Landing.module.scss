@@ -1,0 +1,95 @@
+@import "../variables";
+
+.homePage {
+  background-color: #fafbfd;
+  .hero {
+    // background-image: url("/hero.png");
+    background-size: cover;
+    background-position: center;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    .heroCol {
+      width: 40%;
+      h1 {
+        font-size: nth($fontSize, 4);
+        color: $analysa-grey;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+      p {
+        font-size: nth($fontSize, 9);
+        color: $analysa-purple;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+      h3 {
+        color: $analysa-purple;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .heading {
+    margin-top: 10rem;
+    h2 {
+      margin: auto;
+      text-align: center;
+    }
+
+    .divider {
+      background-color: $analysa-purple;
+      width: 10%;
+      min-width: 2rem;
+      height: 1.5px;
+      margin: 1rem auto;
+    }
+  }
+
+  .cardController {
+    width: 80%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: space-between;
+    :global {
+      .ant-card-body {
+        width: 29rem !important;
+        border-radius: 6px;
+        background-color: $analysa-bg;
+        background: #ffffff;
+        box-shadow: 0px 1px 10px rgba(99, 99, 99, 0.32);
+        //   box-shadow: 0px 13px 18px rgba(57, 84, 255, 0.1);
+        //   bo
+        //   border: 1px solid rgba(31, 33, 39, 0.3);
+      }
+    }
+  }
+}
+
+.timeline {
+  margin: 5rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  :global {
+    .ant-timeline {
+      width: 65rem;
+    }
+  }
+  span {
+    color: $analysa-purple;
+  }
+  h1 {
+    font-size: nth($fontSize, 4);
+    margin-bottom: 0;
+  }
+  h2 {
+    color: $analysa-grey;
+    font-size: nth($fontSize, 3);
+    font-weight: 400;
+    margin-top: 0;
+  }
+}

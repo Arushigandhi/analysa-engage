@@ -102,6 +102,11 @@ exports.GetCarTypes = async (req, res, next) => {
       { $group: { _id: "$Engine_Location", count: { $sum: 1 } } },
       { $sort: { count: -1 } },
     ]);
+    for (property in carsEngLocation) {
+      if (property == "") {
+        delete carsEngLocation[property];
+      }
+    }
     const totalCarBody = getSumByKey(carsBody.slice(0, 5), "count");
     const totalCarFuel = getSumByKey(carsFuel.slice(0, 5), "count");
     const totalCarGears = getSumByKey(carsGears.slice(0, 4), "count");
