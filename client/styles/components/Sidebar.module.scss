@@ -59,6 +59,9 @@
           color: $analysa-purple;
         }
       }
+      &:active {
+        // background-color: red;
+      }
     }
 
     .activeLink {
@@ -93,5 +96,40 @@
     &:hover {
       // color: $bugbase-green;
     }
+  }
+}
+
+.drawer {
+  :global {
+    .ant-drawer-content-wrapper {
+      width: 16rem !important;
+      background-color: $analysa-lilac;
+    }
+    .ant-drawer-wrapper-body {
+      width: 16rem;
+      background-color: $analysa-lilac;
+    }
+    .ant-drawer-body {
+      padding: 0;
+    }
+  }
+}
+
+.mobileMenuContainer {
+  display: none;
+  padding-left: 2rem;
+  padding-top: 3rem;
+
+  @include responsive(tablet3) {
+    display: flex;
+  }
+
+  .menuIcon {
+    color: $analysa-purple;
+    font-size: 1.5rem;
+  }
+
+  .closeIcon {
+    color: $analysa-purple;
   }
 }

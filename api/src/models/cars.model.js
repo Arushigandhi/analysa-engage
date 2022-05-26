@@ -13,7 +13,7 @@ const CarModel = new mongoose.Schema({
     type: String,
     required: false,
   },
-  "Ex-Showroom_Price": {
+  Ex_Showroom_Price: {
     type: String,
     required: false,
   },

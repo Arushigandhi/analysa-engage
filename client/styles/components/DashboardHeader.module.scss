@@ -25,6 +25,9 @@
       font-size: nth($fontSize, 6);
       font-weight: 500;
       color: $analysa-black;
+      @include responsive(mobile4) {
+        font-size: nth($fontSize, 5);
+      }
     }
 
     .DashboardHeaderSubtitle {

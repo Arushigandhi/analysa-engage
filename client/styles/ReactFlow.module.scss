@@ -1,0 +1,39 @@
+@import "./variables";
+
+.floatingedges {
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+
+  .save__controls {
+    position: absolute;
+    z-index: 100;
+    right: 10px;
+    top: 80px;
+  }
+
+  .save__controls button {
+    background-color: white;
+    // margin: 0 5px;
+    width: 16rem;
+
+    @include responsive(mobile4) {
+      font-size: nth($fontSize, 1);
+      padding: 0;
+    }
+  }
+
+  .updatenode__controls {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 4;
+    font-size: 12px;
+    width: 16rem;
+  }
+
+  .updatenode__controls label {
+    display: block;
+  }
+}

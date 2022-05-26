@@ -1,0 +1,114 @@
+@import "../variables";
+
+.specContainer {
+  h1 {
+    font-size: nth($fontSize, 5);
+  }
+  h2 {
+    font-size: nth($fontSize, 4);
+    color: $analysa-grey;
+    @include responsive(mobile4) {
+      font-size: nth($fontSize, 3);
+    }
+  }
+
+  .carousel {
+    border-radius: 12px;
+    .contentStyle {
+      height: 220px;
+      // border: 10px solid #fff;
+      h3 {
+        font-size: nth($fontSize, 4);
+        text-align: center;
+        margin: 2rem 0;
+        line-height: 160px;
+        color: #fff;
+        @include responsive(mobile4) {
+          font-size: nth($fontSize, 2);
+        }
+
+        span {
+          font-weight: 700;
+          font-size: nth($fontSize, 5);
+          @include responsive(mobile4) {
+            font-size: nth($fontSize, 2);
+          }
+        }
+      }
+    }
+  }
+
+  .cosineSim {
+    margin-top: 5rem;
+    .selectCardController {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      .selectCard {
+        width: 30rem;
+        border: none;
+        border-radius: 12px;
+        margin: 2rem 0rem;
+        @include responsive(mobile4) {
+          width: 20rem;
+        }
+        h1 {
+          font-size: nth($fontSize, 3);
+          // border-bottom: 2px solid $analysa-purple;
+          // width: 0.5rem;
+        }
+        .divider {
+          background-color: $analysa-purple;
+          width: 40%;
+          min-width: 2rem;
+          height: 1.5px;
+          margin: 0;
+        }
+        :global {
+          .ant-form {
+            margin: 2rem 0;
+          }
+          .ant-btn {
+            background-color: $analysa-purple;
+            border: none;
+            color: $analysa-purple;
+            border-radius: 5px;
+            font-weight: 500;
+            background: rgba(57, 84, 255, 0.05);
+            border: 1.09846px solid rgba(57, 84, 255, 0.5);
+            border-radius: 3.92308px;
+          }
+        }
+      }
+    }
+  }
+
+  .generate {
+    display: flex;
+    justify-content: center;
+
+    :global {
+      .ant-btn {
+        gap: 0.5rem;
+        display: flex;
+        align-items: center;
+        background-color: $analysa-purple;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 500;
+        height: 3rem;
+        padding: 1rem;
+      }
+    }
+  }
+  .warningText {
+    margin: auto;
+    text-align: center;
+    margin-top: 0.8rem;
+    color: $analysa-grey;
+  }
+}

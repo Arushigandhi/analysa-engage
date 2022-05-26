@@ -3,6 +3,7 @@ import React from "react";
 import Styles from "styles/components/Sidebar.module.scss";
 import { AiOutlineHome, AiOutlineCar } from "react-icons/ai";
 import { BsPeople } from "react-icons/bs";
+import { FiTool } from "react-icons/fi";
 import ActiveLink from "./ActiveLink";
 import Link from "next/link";
 // import { logout } from "services/auth.service";
@@ -45,7 +46,7 @@ const Sidebar = () => {
     },
     {
       name: "Develop",
-      icon: <AiOutlineCar className={Styles.navIcon} />,
+      icon: <FiTool className={Styles.navIcon} />,
       path: "/develop",
     },
   ];

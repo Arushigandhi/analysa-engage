@@ -22,24 +22,29 @@
       > .ant-steps-item-tail::after {
       background-color: $analysa-purple;
     }
+    .ant-steps-item-description {
+      margin: 3rem 0;
+    }
   }
   .dropdown {
     border: 1px solid rgba(31, 33, 39, 0.2);
     border-radius: 4px;
-    margin: 1.5rem 0;
+    margin-bottom: 1rem;
   }
   .timelineButton {
     color: $analysa-purple;
-    margin: 0.5rem 0 2.5rem;
     cursor: pointer;
   }
-  .percentage {
-    margin: 1rem 0;
-  }
+
   .tagDiv {
-    margin: 2rem 0;
+    margin: 1.2rem 0;
   }
   .scatterCard {
-    margin: 4rem 0;
+    margin: 1rem 0;
+  }
+
+  .statistic {
+    margin: 1rem 0;
+    margin-right: 2rem;
   }
 }
