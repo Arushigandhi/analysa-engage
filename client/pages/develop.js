@@ -4,25 +4,15 @@ import ReactFlow, {
   Background,
   useNodesState,
   useEdgesState,
-  MarkerType,
   ReactFlowProvider,
   useReactFlow,
   useKeyPress,
 } from "react-flow-renderer";
 
-import FloatingEdge from "components/react-flow/FloatingEdge.jsx";
-import FloatingConnectionLine from "components/react-flow/FloatingConnectionLine.jsx";
-import { createNodesAndEdges } from "components/react-flow/utils.js";
-
 import Styles from "styles/ReactFlow.module.scss";
 import DashboardLayout from "components/DashboardLayout";
 import { Button, Input } from "antd";
 
-// const { nodes: initialNodes, edges: initialEdges } = createNodesAndEdges();
-
-// const edgeTypes = {
-//   floating: FloatingEdge,
-// };
 const flowKey = "example-flow";
 
 const getNodeId = () => `randomnode_${+new Date()}`;
@@ -205,9 +195,7 @@ const Develop = () => {
           onNodeClick={onNodeClick}
         >
           <div className={Styles.save__controls}>
-            {/* <Button onClick={onSave}>save</Button>
-            <Button onClick={onRestore}>restore</Button> */}
-            <Button onClick={onAdd}>add node</Button>
+            <Button onClick={onAdd}>Add Node</Button>
           </div>
           <div className={Styles.updatenode__controls}>
             <label>Name your new Node:</label>

@@ -1,4 +1,4 @@
-import { Button, Image, Layout } from "antd";
+import { Layout } from "antd";
 import Link from "next/link";
 import React from "react";
 import { BsHeartFill } from "react-icons/bs";

@@ -12,13 +12,8 @@ import {
   Select,
   Spin,
 } from "antd";
-import {
-  findSimilarity,
-  getSimilarCars,
-  getSpecifics,
-} from "services/dashboard.service";
-import { useMutation, useQuery } from "react-query";
-import one from "./assets/three.jpg";
+import { getSimilarCars, getSpecifics } from "services/dashboard.service";
+import { useQuery } from "react-query";
 import { BsArrowRight } from "react-icons/bs";
 const { Option } = Select;
 import { stringSimilarity } from "string-similarity-js";
@@ -114,7 +109,7 @@ export default function Specifics() {
           className={Styles.carousel}
           autoplay
           style={{
-            backgroundImage: `url(${one.src})`,
+            backgroundImage: "url(/assets/carousel.jpg)",
             backgroundPosition: "center",
             backgroundSize: "cover",
             opacity: 0.8,
@@ -353,11 +348,7 @@ export default function Specifics() {
           </Row>
         </Row>
         <Row className={Styles.generate}>
-          <Button
-            icon={<BsArrowRight />}
-            // disabled={carOne != null && carTwo != null ? false : true}
-            onClick={generate}
-          >
+          <Button icon={<BsArrowRight />} onClick={generate}>
             {avg === -1
               ? "Generate Similarity"
               : "Similarity Score is: " + avg.toFixed(5) * 100 + "%"}

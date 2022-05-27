@@ -29,7 +29,6 @@ const DashboardLayout = ({ children, ...rest }) => {
           minHeight: "100vh",
         }}
       >
-        {/* <DashboardHeader title={title} /> */}
         <>
           <Drawer
             closable={false}

@@ -4,8 +4,6 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 const ModalComponent = ({
   heading,
-  subheading,
-  description,
   children,
   show,
   setShow,
@@ -13,7 +11,6 @@ const ModalComponent = ({
   maxWidth,
   minWidth,
   destroyOnClose,
-  keyboard,
 }) => {
   const closeModal = () => {
     setShow(false);

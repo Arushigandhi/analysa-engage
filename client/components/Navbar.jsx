@@ -9,20 +9,14 @@ export default function Navbar() {
     <div>
       <Layout className={Styles.navbarContainer}>
         <div className={Styles.wrapper}>
-          <div
-            style={{
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <Link href="/landing">
+          <div className={Styles.logo}>
+            <Link href="/">
               <Image
-                src={"/ANALYSAlong.png"}
+                src={"/assets/ANALYSAlong.png"}
                 width={160}
                 height={200}
                 objectFit="contain"
-                alt="bugbase-logo"
+                alt="analysa-logo"
                 preview="false"
               />
             </Link>
@@ -32,10 +26,9 @@ export default function Navbar() {
               About Analysa
             </a>
 
-            <Link href="/">
-              <Button className={Styles.loginButton}>Go to Dashboard</Button>
+            <Link href="/dashboard">
+              <Button className={Styles.button}>Go to Dashboard</Button>
             </Link>
-            {/* )} */}
           </nav>
         </div>
       </Layout>

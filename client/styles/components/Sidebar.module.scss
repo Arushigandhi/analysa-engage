@@ -2,42 +2,67 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 
 .sidebarContainer {
-  // position: fixed;
   background-color: $analysa-lilac;
   height: 100%;
   width: 100%;
   padding: 4rem 0rem;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   .sidebarHeading {
     font-size: nth($fontSize, 12);
     font-family: Roboto;
     margin-bottom: 4rem;
     color: $analysa-purple;
+    cursor: pointer;
   }
 
   .sidebarItems {
+    .activenavItem {
+      padding: 0.8rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      background-color: rgba(57, 84, 255, 0.05);
+      border-left: 5px solid $analysa-purple;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      .navIcon {
+        margin-right: 1.2rem;
+        font-size: 1.3rem;
+        color: $analysa-purple;
+        transition: all 0.4s ease-in-out;
+        display: flex;
+        align-items: center;
+      }
+      .navItemName {
+        width: 40%;
+        text-align: left;
+        color: $analysa-purple;
+        font-weight: 500;
+      }
+    }
     .navItem {
       padding: 0.8rem 0;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 1rem;
-
       cursor: pointer;
       transition: all 0.4s ease;
       .navIcon {
         margin-right: 1.2rem;
         font-size: 1.3rem;
         color: $analysa-grey;
-        transition: all 0.5s ease-in-out;
+        transition: all 0.4s ease-in-out;
         display: flex;
         align-items: center;
-
-        &:hover {
-          color: $analysa-purple;
-        }
+      }
+      .navItemName {
+        width: 40%;
+        text-align: left;
+        color: $analysa-grey;
+        font-weight: 500;
       }
       &:hover {
         background-color: rgba(57, 84, 255, 0.05);
@@ -49,52 +74,6 @@
           color: $analysa-purple;
         }
       }
-      .navItemName {
-        width: 40%;
-        text-align: left;
-        color: $analysa-grey;
-        font-weight: 500;
-
-        &:hover {
-          color: $analysa-purple;
-        }
-      }
-      &:active {
-        // background-color: red;
-      }
-    }
-
-    .activeLink {
-      background: rgba(57, 834, 255, 0.05);
-      transition: all 0.4s ease;
-
-      .navIcon {
-        color: $analysa-purple;
-      }
-    }
-  }
-}
-
-.logoutItem {
-  // background: $bugbase-green;
-  // opacity: 0.6;
-  // box-shadow: 0px 0px 8px 11px rgba(16, 202, 0, 0.12);
-  width: 100%;
-  height: 2.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  .navIcon {
-    font-size: 1.3rem;
-    color: #fff;
-    z-index: 100;
-    transition: all 0.4s ease;
-
-    &:hover {
-      // color: $bugbase-green;
     }
   }
 }

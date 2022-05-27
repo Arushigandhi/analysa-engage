@@ -1,23 +1,13 @@
 import React, { useState } from "react";
 import DashboardLayout from "components/DashboardLayout";
 import Styles from "styles/pages/Customer.module.scss";
-import {
-  Col,
-  Input,
-  Row,
-  Segmented,
-  Select,
-  Statistic,
-  Steps,
-  Tag,
-} from "antd";
-import { AiOutlineCar, AiOutlinePlusCircle } from "react-icons/ai";
+import { Col, Row, Segmented, Select, Statistic, Steps, Tag } from "antd";
+import { AiOutlineCar } from "react-icons/ai";
 import {
   ScatterChart,
   Scatter,
   XAxis,
   YAxis,
-  ZAxis,
   CartesianGrid,
   Tooltip,
   Legend,
@@ -84,7 +74,6 @@ export default function Customer() {
               <>
                 <Select
                   defaultValue={"SUV"}
-                  // style={{ width: "fit-content" }}
                   bordered={false}
                   className={Styles.dropdown}
                   onChange={(value) => {
@@ -135,13 +124,6 @@ export default function Customer() {
                   </b>{" "}
                   of the cars are the selected sort from the dataset.
                 </div>
-
-                {/* <div
-                  className={Styles.timelineButton}
-                  onClick={() => setModal(true)}
-                >
-                  Click to know more
-                </div> */}
               </>
             }
           />
@@ -165,8 +147,6 @@ export default function Customer() {
                       );
                     })}
                 </Select>
-                {/* <div className={Styles.timelineButton}>View Details</div> */}
-
                 <div className={Styles.scatterCard}>
                   <ResponsiveContainer width={650} height={500}>
                     <ScatterChart
@@ -219,7 +199,6 @@ export default function Customer() {
             title="What does this tell us about our customer?"
             description={
               <>
-                {/* <div>Lorem Ipsum</div> */}
                 <Segmented
                   options={["Sedan", "Hatchback", "SUV"]}
                   className={Styles.segments}
@@ -236,7 +215,6 @@ export default function Customer() {
                     className={Styles.statistic}
                   />
                 </Row>
-                {/* <div className={Styles.timelineButton}>View Details</div> */}
               </>
             }
           />

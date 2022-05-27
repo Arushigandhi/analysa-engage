@@ -1,38 +1,20 @@
-import { Button, Col, Row, Tooltip, message, Menu } from "antd";
+import { Col, Row } from "antd";
 import React from "react";
 import Styles from "styles/components/Sidebar.module.scss";
 import { AiOutlineHome, AiOutlineCar } from "react-icons/ai";
 import { BsPeople } from "react-icons/bs";
 import { FiTool } from "react-icons/fi";
-import ActiveLink from "./ActiveLink";
 import Link from "next/link";
-// import { logout } from "services/auth.service";
-import { useMutation } from "react-query";
 import { useRouter } from "next/router";
 
 const Sidebar = () => {
   const router = useRouter();
 
-  // const logoutMutation = useMutation(logout, {
-  //   onSuccess: () => {
-  //     // dispatch(logout());
-  //     message.success("Logged out successfully");
-  //   },
-  //   onError: () => {
-  //     message.error("Error logging out");
-  //   },
-  // });
-
-  // const onLogout = async () => {
-  //   await logoutMutation.mutateAsync();
-  //   router.push("/");
-  // };
-
   const sidebarData = [
     {
       name: "Dashboard",
       icon: <AiOutlineHome className={Styles.navIcon} />,
-      path: "/",
+      path: "/dashboard",
     },
     {
       name: "Customer",
@@ -57,28 +39,24 @@ const Sidebar = () => {
       justify="space-between"
       className={Styles.sidebarContainer}
     >
-      <div className={Styles.sidebarHeading}>A.</div>
+      <Link href="/">
+        <div className={Styles.sidebarHeading}>A.</div>
+      </Link>
       <nav className={Styles.sidebarItems}>
         {sidebarData.map((item, index) => (
-          <Link
-            href={item.path}
-            activeClassName={Styles.activeLink}
-            key={index}
-          >
-            <Row className={Styles.navItem}>
+          <Link href={item.path} key={index}>
+            <Row
+              className={
+                router.pathname === item.path
+                  ? Styles.activenavItem
+                  : Styles.navItem
+              }
+            >
               <Col>{item.icon}</Col>
               <Col className={Styles.navItemName}>{item.name}</Col>
             </Row>
           </Link>
         ))}
-        {/* <ActiveLink href={"/"} activeClassName={Styles.activeLink}>
-          <Tooltip title={"Logout"} placement="right">
-            <div className={Styles.logoutItem}>
-              {" "}
-              <IoLogOutOutline className={Styles.navIcon} />
-            </div>
-          </Tooltip>
-        </ActiveLink> */}
       </nav>
     </Col>
   );

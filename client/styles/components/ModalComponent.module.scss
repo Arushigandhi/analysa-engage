@@ -25,11 +25,8 @@
     .headingtextController {
       display: flex;
       flex-direction: row;
-      h1 {
-        // color: $white-text;
-      }
+
       h2 {
-        // color: rgba(16, 202, 0, 0.5);
         font-size: nth($fontSize, 1);
         padding: 0.5rem 1rem 0;
       }

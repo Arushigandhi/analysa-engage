@@ -1,0 +1,44 @@
+@import "../variables";
+
+.container {
+  background-color: $analysa-lilac;
+  height: 93vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: nth($fontSize, 4);
+    margin-top: 4rem;
+    font-weight: 500;
+    color: $analysa-grey;
+  }
+  h2 {
+    color: $analysa-purple;
+    font-size: nth($fontSize, 6);
+    font-weight: 500;
+  }
+  img {
+    animation: rotation 25s infinite linear;
+    cursor: pointer;
+    margin: 2rem;
+  }
+  .button {
+    background-color: $analysa-purple;
+    color: #fff;
+    border: none;
+    margin-right: 2rem;
+    border-radius: 0.3rem;
+    padding: 0rem 2rem;
+    font-size: nth($fontSize, 3);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
