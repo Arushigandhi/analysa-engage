@@ -303,13 +303,16 @@ export default function Home() {
                 }}
               >
                 {!isLoadingPop &&
-                  Object.keys(popCars).map((item, idx) => {
-                    return (
-                      <Option key={idx} value={item}>
-                        {item}
-                      </Option>
-                    );
-                  })}
+                  Object.keys(popCars)
+                    .sort()
+                    .slice(1, 43)
+                    .map((item, idx) => {
+                      return (
+                        <Option key={idx} value={item}>
+                          {item}
+                        </Option>
+                      );
+                    })}
               </Select>
             </div>
             {!isLoadingPop ? (
