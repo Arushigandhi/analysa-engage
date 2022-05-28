@@ -42,14 +42,21 @@
   .scatterCard {
     margin: 1rem 0;
   }
-  .segments {
-    margin-top: 0;
+  .segmentsWrapper {
+    overflow-y: scroll;
+
+    .segments {
+      margin-top: 0;
+    }
   }
   .description {
     width: 60% !important;
     margin-top: 2rem;
     // color: #000;
     font-size: nth($fontSize, 3);
+    @include responsive(tablet1) {
+      width: 100% !important;
+    }
   }
 
   .statistic {

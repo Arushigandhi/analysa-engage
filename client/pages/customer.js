@@ -123,18 +123,20 @@ export default function Customer() {
                 {isLoading ? (
                   <Spin size="large" />
                 ) : (
-                  <Segmented
-                    options={processed?.slice(0, 6)}
-                    className={Styles.segments}
-                    defaultValue={"SUV"}
-                    onChange={(e) => {
-                      setValue(e);
-                      setAvg(
-                        carPrice.bodyType[e]?.price /
-                          carPrice.bodyType[e]?.count
-                      );
-                    }}
-                  />
+                  <div className={Styles.segmentsWrapper}>
+                    <Segmented
+                      options={processed?.slice(0, 6)}
+                      className={Styles.segments}
+                      defaultValue={"SUV"}
+                      onChange={(e) => {
+                        setValue(e);
+                        setAvg(
+                          carPrice.bodyType[e]?.price /
+                            carPrice.bodyType[e]?.count
+                        );
+                      }}
+                    />
+                  </div>
                 )}
                 <Col>
                   <Row className={Styles.description}>
