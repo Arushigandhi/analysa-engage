@@ -23,7 +23,7 @@
       background-color: $analysa-purple;
     }
     .ant-steps-item-description {
-      margin: 3rem 0;
+      margin: 2.5rem 0;
     }
   }
   .dropdown {
@@ -41,6 +41,15 @@
   }
   .scatterCard {
     margin: 1rem 0;
+  }
+  .segments {
+    margin-top: 0;
+  }
+  .description {
+    width: 60% !important;
+    margin-top: 2rem;
+    // color: #000;
+    font-size: nth($fontSize, 3);
   }
 
   .statistic {

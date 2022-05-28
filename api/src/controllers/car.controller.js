@@ -142,32 +142,24 @@ exports.GetPriceRange = async (req, res, next) => {
       id,
       Body_Type,
       Price: Number(Ex_Showroom_Price.replace(/\D/g, "")),
-      // Average,
     }));
-    // newData.forEach((car) => {
-    //   if (car.Body_Type === "Sedan") {
-    //     car.Average = car.Average + car.Price;
-    //   } else if (car.Body_Type === "Hatchback") {
-    //     car.Average = car.Average + car.Price;
-    //   } else if (car.Body_Type === "SUV") {
-    //     car.Average = car.Average + car.Price;
-    //   } else if (car.Body_Type === "Coupe") {
-    //     car.Average = car.Average + car.Price;
-    //   } else if (car.Body_Type === "Convertible") {
-    //     car.Average = car.Average + car.Price;
-    //   } else if (car.Body_Type === "Crossover") {
-    //     car.Average = car.Average + car.Price;
-    //   } else if (car.Body_Type === "Pickup") {
-    //     car.Average = car.Average + car.Price;
-    //   } else if (car.Body_Type === "Cabriolet") {
-    //     car.Average = car.Average + car.Price;
-    //   } else {
-    //     car.Average = car.Average + car.Price;
-    //   }
-    // });
+    let bodyType = {};
+    for (let car of newData) {
+      if (bodyType[car.Body_Type]) {
+        bodyType[car.Body_Type] = {
+          price: bodyType[car.Body_Type].price + car.Price,
+          count: bodyType[car.Body_Type].count + 1,
+        };
+      } else {
+        bodyType[car.Body_Type] = {
+          price: car.Price,
+          count: 1,
+        };
+      }
+    }
     return res.status(200).json({
       success: true,
-      newData,
+      bodyType,
     });
   } catch (err) {
     console.log("ERROR");

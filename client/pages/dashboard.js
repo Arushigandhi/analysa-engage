@@ -78,11 +78,18 @@ export default function Home() {
     "bodyTypePieData",
     getBodyType
   );
-  const carBody = carTypes?.carsBody?.slice(0, 5);
-  const carFuel = carTypes?.carsFuel?.slice(0, 5);
-  const carGears = carTypes?.carsGears?.slice(0, 4);
-  const carEngLocation = carTypes?.carsEngLocation.sort();
-  console.log(carEngLocation, "kk");
+  const carBody = carTypes?.carsBody
+    ?.filter((car) => (car._id.length !== 0 ? 1 : 0))
+    .slice(0, 5);
+  const carFuel = carTypes?.carsFuel
+    ?.filter((car) => (car._id.length !== 0 ? 1 : 0))
+    .slice(0, 5);
+  const carGears = carTypes?.carsGears
+    ?.filter((car) => (car._id.length !== 0 ? 1 : 0))
+    .slice(0, 5);
+  const carEngLocation = carTypes?.carsEngLocation
+    .filter((car) => (car._id.length !== 0 ? 1 : 0))
+    .slice(0, 5);
 
   const { data: popCars, isLoading: isLoadingPop } = useQuery(
     "popCarsData",

@@ -1,5 +1,15 @@
 @import "./variables";
 
+.deevlopHeading {
+  color: $analysa-grey;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  b {
+    color: $analysa-purple;
+    font-weight: 500;
+  }
+}
 .floatingedges {
   flex-direction: column;
   display: flex;

@@ -182,6 +182,11 @@ const Develop = () => {
 
   return (
     <DashboardLayout title="Plan Out your Car's Journey">
+      <h2 className={Styles.deevlopHeading}>
+        Use this board space to plan out your car's specs. Click on each node to
+        <b> Input</b> their attribute name from the field to the right. You can
+        also <b>Add Nodes</b> and connect them to other nodes.
+      </h2>
       <div className={Styles.floatingedges}>
         <ReactFlow
           nodes={nodes}
