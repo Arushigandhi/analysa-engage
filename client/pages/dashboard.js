@@ -34,10 +34,12 @@ import {
   getPopularCars,
 } from "services/dashboard.service";
 import { BsInfoCircle } from "react-icons/bs";
+import useMediaQuery from "components/hooks/useMediaQuery";
 
 const { Option } = Select;
 
 export default function Home() {
+  const isDesktop = useMediaQuery("(min-width: 960px)");
   const [show, setShow] = useState(false);
   const [showPie, setPieShow] = useState(false);
   const [pie, setPie] = useState();
@@ -454,7 +456,7 @@ export default function Home() {
         heading={"About"}
         show={show}
         setShow={setShow}
-        width={"40%"}
+        width={isDesktop ? "40%" : "85%"}
         maxWidth={1200}
       >
         <div className={Styles.modal}>
@@ -494,7 +496,7 @@ export default function Home() {
         }
         show={showPie}
         setShow={setPieShow}
-        width={"40%"}
+        width={isDesktop ? "40%" : "85%"}
         maxWidth={1200}
       >
         <div className={Styles.modal}>

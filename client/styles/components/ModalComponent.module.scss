@@ -2,6 +2,7 @@
 
 .modalContainer {
   margin: auto;
+
   :global {
     .ant-modal-content {
       background-color: $analysa-lilac;
@@ -14,7 +15,7 @@
     .ant-modal-close-x {
       display: none;
     }
-    .ant-modal-body {
+    .ant-modal-wrap {
       margin: auto;
     }
   }
@@ -25,11 +26,14 @@
     .headingtextController {
       display: flex;
       flex-direction: row;
-
-      h2 {
-        font-size: nth($fontSize, 1);
-        padding: 0.5rem 1rem 0;
+      font-size: nth($fontSize, 5);
+      @include responsive(tablet1) {
+        font-size: nth($fontSize, 4);
       }
     }
+  }
+  .children {
+    display: flex;
+    overflow-x: scroll;
   }
 }

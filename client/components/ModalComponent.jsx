@@ -4,7 +4,6 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 const ModalComponent = ({
   heading,
-  description,
   children,
   show,
   setShow,
@@ -30,9 +29,7 @@ const ModalComponent = ({
         destroyOnClose={destroyOnClose}
       >
         <div className={Styles.headingController}>
-          <div className={Styles.headingtextController}>
-            <h1>{heading}</h1>
-          </div>
+          <h1 className={Styles.headingtextController}>{heading}</h1>
           <div>
             <AiFillCloseCircle
               style={{
@@ -45,8 +42,7 @@ const ModalComponent = ({
             />
           </div>
         </div>
-        <p className={Styles.headingController}>{description}</p>
-        {children}
+        <div className={Styles.children}>{children}</div>
       </Modal>
     </>
   );

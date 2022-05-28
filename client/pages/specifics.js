@@ -74,12 +74,10 @@ export default function Specifics() {
 
   const onOneSubmit = async (values) => {
     setCarOne(values);
-    console.log(carOne);
   };
 
   const onTwoSubmit = async (e) => {
     setCarTwo(e);
-    console.log(carTwo);
   };
 
   const generate = () => {
@@ -95,7 +93,6 @@ export default function Specifics() {
       sum += item;
     });
     setAvg(sum / simArray.length);
-    console.log(avg);
   };
 
   return (
@@ -163,12 +160,7 @@ export default function Specifics() {
                   }}
                 >
                   <Form.Item label="Car Type" name="type">
-                    <Select
-                      defaultValue={"AMT"}
-                      onChange={(value) => {
-                        console.log(value);
-                      }}
-                    >
+                    <Select defaultValue={"AMT"}>
                       {!isLoadingSpec &&
                         filterObj.Type.slice(3, 10).map((item, idx) => {
                           return (
