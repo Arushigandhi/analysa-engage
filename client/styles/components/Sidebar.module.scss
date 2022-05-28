@@ -10,7 +10,7 @@
   flex-direction: column;
   .sidebarHeading {
     font-size: nth($fontSize, 12);
-    font-family: Roboto;
+    font-family: Roboto !important;
     margin-bottom: 4rem;
     color: $analysa-purple;
     cursor: pointer;

@@ -1,1 +1,1 @@
-export const BACKEND_ROOT_URL = `http://localhost:8080/api`;
+export const BACKEND_ROOT_URL = `https://analysa-engage.herokuapp.com/api`;
