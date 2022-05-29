@@ -91,7 +91,7 @@ export default function Home() {
     .slice(0, 5);
   const carEngLocation = carTypes?.carsEngLocation
     .filter((car) => (car._id.length !== 0 ? 1 : 0))
-    .slice(0, 5);
+    .slice(0, 4);
 
   const { data: popCars, isLoading: isLoadingPop } = useQuery(
     "popCarsData",

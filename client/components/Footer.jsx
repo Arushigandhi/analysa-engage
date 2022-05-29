@@ -11,7 +11,9 @@ export default function Footer() {
         <div className={Styles.wrapper}>
           Developed with <BsHeartFill color="rgba(57, 84, 255, 1)" /> by
           <Link href="https://arushigandhi.com/">
-            <p>Arushi Gandhi</p>
+            <a target="_blank">
+              <p>Arushi Gandhi</p>
+            </a>
           </Link>
         </div>
       </Layout>

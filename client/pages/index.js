@@ -184,6 +184,21 @@ export default function Home() {
           </Timeline.Item>
         </Timeline>
       </Row>
+      <Col className={Styles.heading}>
+        <h2>Product Demo</h2>
+        <Divider className={Styles.divider} />
+      </Col>
+      <Row justify="center" style={{ padding: "5rem" }}>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/ylj3dweu6GI"
+          title="YouTube video player"
+          frameborder="2"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </Row>
       <Footer />
     </div>
   );

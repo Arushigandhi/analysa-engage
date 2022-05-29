@@ -90,6 +90,9 @@
     padding: 0rem 4rem;
     transition: all 0.3s ease;
     gap: 0.5rem;
+    @include responsive(mobile4) {
+      padding: 0;
+    }
 
     p {
       margin-bottom: 0;
