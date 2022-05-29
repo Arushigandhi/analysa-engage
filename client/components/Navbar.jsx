@@ -22,7 +22,7 @@ export default function Navbar() {
             </Link>
           </div>
           <nav className={Styles.mainNav}>
-            <a href="/#aboutSection" className={Styles.navLink}>
+            <a href="/#video" className={Styles.navLink}>
               About Analysa
             </a>
 

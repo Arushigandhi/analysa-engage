@@ -184,7 +184,7 @@ export default function Home() {
           </Timeline.Item>
         </Timeline>
       </Row>
-      <Col className={Styles.heading}>
+      <Col className={Styles.heading} id="video">
         <h2>Product Demo</h2>
         <Divider className={Styles.divider} />
       </Col>
