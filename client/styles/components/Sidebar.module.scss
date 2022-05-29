@@ -1,5 +1,5 @@
 @import "../variables";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700;800;900&display=swap");
 
 .sidebarContainer {
   background-color: $analysa-lilac;
@@ -11,7 +11,7 @@
   .sidebarHeading {
     font-size: nth($fontSize, 12);
     font-family: "Roboto" !important;
-    font-weight: 900;
+    font-weight: 700;
     margin-bottom: 4rem;
     color: $analysa-purple;
     cursor: pointer;
